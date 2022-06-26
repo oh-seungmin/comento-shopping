@@ -1,14 +1,7 @@
-import './App.css';
-import Navigaion from './components/Navigation';
 
+import Home from "./pages/Home";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <Navigaion/>
-      코맨트 쇼핑
-    </div>
-  );
-}
+const App = () =><Home />;
 
 export default App;
