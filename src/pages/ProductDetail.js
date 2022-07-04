@@ -12,8 +12,8 @@ const ProductDetail = ()=>{
             price={"21,800원"}/>
         </div>
         <div>
-            <PrductStyle><a href="#">상품 설명</a></PrductStyle>
-            <PrductStyle><a href="#">상품 후기</a></PrductStyle>
+            <PrductStyle><a href>상품 설명</a></PrductStyle>
+            <PrductStyle><a href>상품 후기</a></PrductStyle>
         
         </div>
         </div>
