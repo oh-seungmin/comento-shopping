@@ -8,6 +8,7 @@ font-weight: 700;
 font-size: 20px;
 line-height: 26px;
 padding: 24px 16px;
+
 color:white;
 ;
 `;
