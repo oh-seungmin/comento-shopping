@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ProductCard = ({name,description,thumbnail}) =>{
     return(
         <div>
-            <ProductCardWrap>
+
             <ProductCardImgStyle>
         <img src={thumbnail} alt={name} width="500"/>
         </ProductCardImgStyle>
@@ -13,7 +13,6 @@ const ProductCard = ({name,description,thumbnail}) =>{
             <ProductDescriptionStyle>            
             <div>{description}</div>
             </ProductDescriptionStyle>
-            </ProductCardWrap>
         </div>
     ); 
 };
@@ -39,6 +38,7 @@ const ProductDescriptionStyle = styled.div `
 `;
 
 const ProductCardImgStyle = styled.div `
-object-fit: cover;
+object-fit: cover
 `;
+
 export default ProductCard ;

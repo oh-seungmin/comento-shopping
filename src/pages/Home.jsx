@@ -63,7 +63,7 @@ const ThemeSection = styled.div`
 
 const GrayLine = styled.div`
     height: 8px;
-    width: 100p%;
+    width: 100px;
     background: #eeeeee;
 `;
 
@@ -73,7 +73,7 @@ const ProductSection = styled.div`
 
 const NavigationLine = styled.div`
    height: 4px;
-    width: 100p%;
+    width: 100px;
     background: #eeeeee;
 `;
 
