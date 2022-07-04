@@ -2,7 +2,7 @@ import React from "react";
 import InputBox from "../components/InputBox";
 import TodoItemList from "../components/TodoItemList";
 
-const Home = () =>(
+/*const Home = () =>(
     <div className="homepage_container">
         <InputBox/>
         <TodoItemList/>
@@ -10,5 +10,8 @@ const Home = () =>(
         
     </div>
 );
-
+*/
+const Home = ()=>{
+    return <div>홈</div>
+}
 export default Home;
