@@ -7,7 +7,7 @@ import { BrowserRouter,Routes,Route} from "react-router-dom";
 
 function App(){
     return(
-        <BrowserRouter basename="comento-shop">
+        <BrowserRouter basename="comento-shopping">
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/product/:productId" element={<ProductDetail/>}/>

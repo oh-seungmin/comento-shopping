@@ -3,6 +3,7 @@ import Navigaion from "../components/Navigation";
 import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
 import styled from "styled-components";
+import ProductDetail from "./ProductDetail";
 import InputBox from "../components/InputBox";
 import TodoItemList from "../components/TodoItemList";
 
@@ -32,6 +33,7 @@ const Home = ()=>{
            {/* Product Card */} 
             <ProductSection>
             <ProductCard
+            href="ProductDetail"
             name="비숑 블랙 머그잔" 
             description="쌀쌀한 날씨에 따뜻한 우유, 커피 한잔하기 좋은 블랙
             &화이트 비숑 머그잔입니다."
