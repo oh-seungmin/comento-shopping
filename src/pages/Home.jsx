@@ -2,6 +2,7 @@ import React from "react";
 import Navigaion from "../components/Navigation";
 import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
+import styled from "styled-components";
 import InputBox from "../components/InputBox";
 import TodoItemList from "../components/TodoItemList";
 
@@ -17,15 +18,18 @@ import TodoItemList from "../components/TodoItemList";
 const Home = ()=>{
     return(
       <div>
-        {/* Navigation */}
-        <Navigaion/>
         <div>
-            {/* ThemeButton */}
-            <ThemeButton themeName={"#겨울방한탬"}/>
-            <ThemeButton themeName={"#따순 머그컵"}/>
+            <Navigaion/>
+            <ThemeSection>
+                <ThemeButton themeName={"#겨울방한탬"}/>
+                <ThemeButton themeName={"#따순 머그컵"}/>
+            </ThemeSection>
+
+            <GrayLine/>
         </div>
         <div>
            {/* Product Card */} 
+            <ProductSection>
             <ProductCard
             name="비숑 블랙 머그잔" 
             description="쌀쌀한 날씨에 따뜻한 우유, 커피 한잔하기 좋은 블랙
@@ -44,9 +48,26 @@ const Home = ()=>{
             description="솜삽탕처럼 부드러운 쉐입에 스트라이프 조각이 더해져 심플하면서도 세련된 파스텔 컬러의 머그."
             thumbnail="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product3.jpg"
             />
-            
+            </ProductSection>
         </div>
       </div>  
     ); 
-}
+};
+
+const ThemeSection = styled.div`
+    display:flex;
+    gap: 12px;
+    padding:40px 12px;
+`;
+
+const GrayLine = styled.div`
+    height: 8px;
+    width: 100p%;
+    background: #eeeeee;
+`;
+
+const ProductSection = styled.div`
+    padding: 20px;
+`;
+
 export default Home;
