@@ -3,13 +3,9 @@ import Navigaion from "../components/Navigation";
 import ProductCardDettial from "../components/ProductCardDetai"
 import ProductReview from "../components/ProductReview";
 import ProductCard from "../components/ProductCard";
-import { useState } from "react";
+
 
 const ProductDetail = ()=>{
-    const[products, setproducts] = useState();
-    const onClick = ()=>{
-    }
-
     return(
         <div>
         <Navigaion/>
@@ -26,37 +22,26 @@ const ProductDetail = ()=>{
             description="쌀쌀한 날씨에 따뜻한 우유, 커피 한잔하기 좋은 블랙
             &화이트 비숑 머그잔입니다."
             thumbnail="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg"
+            alt = "비숑 블랙 머그잔"
+
             />
             </ProductDetailStyle>
-            <FontStyle>관련 상품</FontStyle>
-      <ProductReviewStyle>
-      <img Width='230' Height='230'src={'https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product2.jpg'} />
-      <ProductReview name={'장바구니 담기'}></ProductReview>
-      </ProductReviewStyle>
-      <ProductReviewStyle>
-      <img Width='230' Height='230'src={'https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product3.jpg'} />
-      <ProductReview name={'장바구니 담기'}></ProductReview>
-      </ProductReviewStyle>
+      <FontStyle>관련 상품</FontStyle>
+        <ProductReviewStyle>
+            <img Width='230' Height='230'src={'https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product2.jpg'}
+            alt= "가열 보온 티코스터 온열 원터치 컵 받침대" />
+                <ProductReview name={'장바구니 담기'}></ProductReview>
+        </ProductReviewStyle>
+        <ProductReviewStyle>
+            <img Width='230' Height='230'src={'https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product3.jpg'}
+            alt= "벨루즈까사 솜사탕 파스텔 머그 4종 세트" />
+                <ProductReview name={'장바구니 담기'}></ProductReview>
+        </ProductReviewStyle>
         </div>
     </div>
     ); 
 };
 
-const PrductStyle = styled.div `
-//outline: 1px solid black;
-text-decoration-line:none;
-margin-top: 30px;
-width:255px; 
-height:40px;
-background: #eeeeee;
-color: black;
-font-weight: 700;
-float: left;
-font-size:15px;
-text-align:center;
-padding-top:20px; 
-margin-bottom: 30px;
-`;
 
 const ProductDetailStyle = styled.div`
 position: relative;

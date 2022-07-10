@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProductCardDetail = ({name,thumbnail,price}) =>{
+const ProductCardDetail = ({name,thumbnail,price}) =>{ //eslint-disable-line no-unused-vars
     return(
         <div>
         <ProductCardDetailImgStyle 
