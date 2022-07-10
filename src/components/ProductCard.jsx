@@ -1,40 +1,44 @@
 import styled from "styled-components";
 
-const ProductCard = ({name,description,thumbnail}) =>{ //eslint-disable-line no-unused-vars
-    return(
-        <div>
-
-        <ProductCardImgStyle src={thumbnail} alt={name} />
-          <ProductCardNameStyle>
-            <div>{name}</div>
-          </ProductCardNameStyle>
-          <ProductDescriptionStyle>            
-            <div>{description}</div>
-          </ProductDescriptionStyle>
-        </div>
-    ); 
+const ProductCard = ({ name, description, thumbnail, onClick }) => {
+  return (
+    <ProductCardStyled onClick={onClick}>
+      {/* 이미지를 <img> 대신 <div>를 쓰는 방법: 이미지 사이즈가 외부의 요인에 의해 바뀌어야 할 때 */}
+      {/* 배경은 사이즈가 없기 때문에, 이미지 사이즈를 고정값으로 줘야합니다
+         - width또는 height 하나를 고정px로 주고, 다른 속성을 %로 줘도 됩니다. */}
+      <ProductThumbnail style={{ backgroundImage: `url(${thumbnail})` }} />
+      <ProductName>{name}</ProductName>
+      <ProductDesc>{description}</ProductDesc>
+    </ProductCardStyled>
+  );
 };
 
-const ProductCardImgStyle = styled.img`
-object-fit: cover;
-width: 500px;
-height: 350px;
+const ProductCardStyled = styled.div`
+  padding-bottom: 40px;
 `;
 
-const ProductCardNameStyle = styled.div `
-  padding: 16px;  
-  background-color: white;
-  text-align: left;
+const ProductThumbnail = styled.div`
+  object-fit: cover;
+  width: 500px;
+  border: 3px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 12px;
+`;
+const ProductName = styled.div`
   font-weight: 700;
-  font-size: 25px;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  padding-bottom: 12px;
+`;
+const ProductDesc = styled.div`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #000000;
 `;
 
-const ProductDescriptionStyle = styled.div `
-  padding: 16px;  
-  background-color: white;
-  font-weight: 700;
-  text-align: left;
-  white-space: pre-line;
-`;
-
-export default ProductCard ;
+export default ProductCard;
