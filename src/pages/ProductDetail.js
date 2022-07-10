@@ -3,21 +3,22 @@ import Navigaion from "../components/Navigation";
 import ProductCardDettial from "../components/ProductCardDetai"
 import ProductReview from "../components/ProductReview";
 import ProductCard from "../components/ProductCard";
+import { useState } from "react";
 
 const ProductDetail = ()=>{
+    const[products, setproducts] = useState();
+    const onClick = ()=>{
+    }
+
     return(
         <div>
         <Navigaion/>
-        <div>
             <ProductCardDettial name ="비숑 블랙 머그잔"
             thumbnail="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg"
-            price={"21,800원"}/>
-        </div>
-        <div>
-            <PrductStyle><a href>상품 설명</a></PrductStyle>
-            <PrductStyle><a href>상품 후기</a></PrductStyle>
-        
-        </div>
+            price={"21,800원"}
+            alt="비숑 블랙 머그잔"/>
+            <ProductReviewButton>상품 설명</ProductReviewButton>
+            <ProductReviewButton>상품 후기</ProductReviewButton>
         <div>
         <ProductDetailStyle>    
         <ProductCard
@@ -37,7 +38,7 @@ const ProductDetail = ()=>{
       <ProductReview name={'장바구니 담기'}></ProductReview>
       </ProductReviewStyle>
         </div>
-        </div>
+    </div>
     ); 
 };
 
@@ -79,10 +80,10 @@ padding: 24px 16px;
 left: 150px;
 `;
 
-const GrayLine = styled.div`
-    height: 8px;
-    width: 100%;
-    background: #eeeeee;
+const ProductReviewButton = styled.button `
+width:250px;
+height: 50px;
+background-color: #eeeeee;
 `;
 
 export default ProductDetail;

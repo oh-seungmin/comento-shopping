@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Navigaion = ({}) =>{
+const Navigaion = () =>{
     return(
         <div>
             <NavigaionStyled>코맨트 쇼핑</NavigaionStyled>

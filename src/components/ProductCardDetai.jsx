@@ -3,20 +3,21 @@ import styled from "styled-components";
 const ProductCardDetail = ({name,thumbnail,price}) =>{
     return(
         <div>
-        <img 
+        <ProductCardDetailImgStyle 
          src={thumbnail}
-         alt={name}
-         width="500"
-         border="3px"/>
-        <ProductCardNameStyle>
-            <div>{name}</div>
-        </ProductCardNameStyle>
-            <PriceStyle>
-                <div>{price}</div>
-                </PriceStyle>
+         alt={name}/>
+        <ProductCardNameStyle>{name}</ProductCardNameStyle>
+            <PriceStyle>{price}</PriceStyle>
         </div>
     ); 
 };
+const ProductCardDetailImgStyle = styled.img`
+  object-fit: cover;
+  width: 500px;
+  border: 3px;
+  height: 350px;
+`;
+
 
 const ProductCardNameStyle = styled.div `
   position:relative;
@@ -35,9 +36,4 @@ const PriceStyle = styled.div`
   text-align: left;
 `;
 
-const ProductCardImgStyle = styled.div `
-object-fit: cover;
-border: 5px;
-border-width: 2px;
-`;
 export default ProductCardDetail ;

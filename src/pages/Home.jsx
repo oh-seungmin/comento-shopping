@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigaion from "../components/Navigation";
 import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
@@ -6,6 +6,18 @@ import styled from "styled-components";
 
 
 const Home = ()=>{
+    const [products, setproducts] = useState();
+    
+    /*const onClickThemeButton = (themeId) =>{
+        if(themeId ==1){
+            setproducts(mockThemeProducts)
+        }else if(themeId==2){
+            setproducts(mockThemeProducts);
+        }
+    
+    }
+    */
+
     return(
       <div>
         <div>
