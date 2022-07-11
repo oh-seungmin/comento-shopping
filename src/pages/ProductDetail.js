@@ -3,24 +3,30 @@ import { useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import { getProductDetail } from "../data/mockData";
 import styled from "styled-components";
-
+import { reviewData } from "../data/reviewData";
+import Review from "../components/Review";
+import MenuTab from "../components/MenuTab";
 
 const ProductDetail = () => {
   // URL에서 paramter 변수(productId) 받아오는 로직
   let { productId } = useParams();
 
   const [product, setProduct] = useState();
-  const [catergoryIndex, setCategoryIndex] = useState(0);
-  const categories = ['상품설명','상품후기'];
 
   useEffect(() => {
     const result = getProductDetail(productId);
     setProduct(result);
   }, []);
 
-  const buttonstyled = {display:'grid',alignItems:'center',flex:2};
-  const selectbutton = {backgroundColor:'#eeeeee'};
 
+  /*const onClickReviewButton = (themeid) =>{
+    if(themeid ===1){
+      console.log("1번이 찍혔음");
+    }else{
+      console.log("다른 번호가 찍혔음");
+    }
+  }
+*/
   return (
     <div>
       <Navigation />
@@ -32,16 +38,9 @@ const ProductDetail = () => {
         <FontStyle>{product.price}</FontStyle>
       </>
       )}
-    <ButtonStyled>
-          {
-          categories ? (
-          categories.map((item,idx) => (
-            <div style={Object.assign({},buttonstyled,catergoryIndex===idx && selectbutton)} key={idx} onClick={()=>{setCategoryIndex(idx)}}>{item}</div>
-          ))
-        ) : (
-          <div>제품이 없습니다.</div>
-        )}
-        </ButtonStyled>
+      <div>
+      <MenuTab/> 
+      </div>   
     </div>
     ); 
 };
@@ -53,11 +52,11 @@ text-align: center;
 `;
 
 const FontStyle = styled.div`
-position: relative;
 font-size: 25px;
 font-weight: 700;
-padding: 24px 16px;
 left: 20px;
 `;
+
+
 
 export default ProductDetail;
