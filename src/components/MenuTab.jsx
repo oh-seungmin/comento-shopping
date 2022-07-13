@@ -23,7 +23,7 @@ const MenuTab = () => {
               />
               <div style={{ height: 20 }}></div>
             </>
-          ))}{" "}
+          ))}
         </div>
       );
     }
@@ -42,6 +42,7 @@ const MenuTab = () => {
           상세 설명
         </Nav.Link>
       </Nav.Item>
+
       <Nav.Item>
         <Nav.Link
           eventKey="link-1"

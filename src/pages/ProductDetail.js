@@ -40,7 +40,10 @@ const ProductDetail = () => {
       <div>
         <MenuTab />
       </div>
-      <BasketButton name={"장바구니에 담기"}></BasketButton>
+      <BasketButton
+        onClick={() => navigate("/" + "Basket")}
+        name={"장바구니에 담기"}
+      ></BasketButton>
     </div>
   );
 };
