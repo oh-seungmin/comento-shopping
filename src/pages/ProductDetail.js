@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import { getProductDetail } from "../data/mockData";
 import styled from "styled-components";
 import MenuTab from "../components/MenuTab";
 import BasketButton from "../components/BasketButton";
+import BackButton from "../components/BackButton";
 
 const ProductDetail = () => {
   // URL에서 paramter 변수(productId) 받아오는 로직
@@ -15,14 +16,17 @@ const ProductDetail = () => {
   useEffect(() => {
     const result = getProductDetail(productId);
     setProduct(result);
-  }, []);
+  }, [productId]);
+
+  //navigate 사용
+  const navigate = useNavigate();
 
   return (
     <div>
-      <Navigation />
-
       {product && (
         <>
+          <BackButton onClick={() => navigate("/")} />
+          <Navigation />
           <img
             src={product.thumbnail}
             width="550"
