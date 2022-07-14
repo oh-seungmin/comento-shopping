@@ -4,8 +4,8 @@ import Navigation from "../components/Navigation";
 import { getProductDetail } from "../data/mockData";
 import styled from "styled-components";
 import MenuTab from "../components/MenuTab";
-import BasketButton from "../components/BasketButton";
 import BackButton from "../components/BackButton";
+import * as storage from "../utils/storage";
 
 const ProductDetail = () => {
   // URL에서 paramter 변수(productId) 받아오는 로직
@@ -21,6 +21,10 @@ const ProductDetail = () => {
   //navigate 사용
   const navigate = useNavigate();
 
+  const onClickAddBasketButton = () => {
+    storage.addBasket(product);
+    navigate("/basket");
+  };
   return (
     <div>
       {product && (
@@ -40,10 +44,9 @@ const ProductDetail = () => {
       <div>
         <MenuTab />
       </div>
-      <BasketButton
-        onClick={() => navigate("/" + "Basket")}
-        name={"장바구니에 담기"}
-      ></BasketButton>
+      <AddBasketButton onClick={onClickAddBasketButton}>
+        장바구니 담기
+      </AddBasketButton>
     </div>
   );
 };
@@ -52,6 +55,23 @@ const FontStyle = styled.div`
   font-size: 25px;
   font-weight: 700;
   left: 20px;
+`;
+
+const AddBasketButton = styled.div`
+  bottom: 0px;
+  width: 100%;
+  max-width: 390px;
+  height: 70px;
+  background: #24dbaf;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
 `;
 
 export default ProductDetail;
