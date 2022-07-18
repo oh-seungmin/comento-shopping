@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import OrderModal from "../components/OrderModal";
 
 const Basket = () => {
+  let delivery_fee = 2500;
+
   const [basketItems, setBasketItems] = useState();
   const [basketItemCount, setBasketItemCount] = useState(0);
   const [baskeItemPrice, setBasketPrice] = useState(0);
@@ -40,12 +42,14 @@ const Basket = () => {
   const handleClick = () => {
     setOpen(true);
   };
-  const closeClick = () => {};
+  const handleClickCancel = () => {
+    setOpen(false);
+  };
 
   const TotalPrice = (items) => {
     let totalprice = 0;
     for (var i = 0; i < items.length; i++) {
-      totalprice += items[i].price;
+      totalprice += parseInt(items[i].price);
     }
     return setBasketPrice(totalprice);
   };
@@ -75,14 +79,12 @@ const Basket = () => {
         </Basketdetail>
         <Basketdetail style={{ textAlign: "right" }}>
           <div>{baskeItemPrice}원</div>
-          <div>0원</div>
-          <div>{baskeItemPrice}원</div>
+          <div>{delivery_fee}</div>
+          <div>{baskeItemPrice + delivery_fee}원</div>
         </Basketdetail>
       </Basketbody>
-      <AddBasketButtons onClick={handleClick}>
-        장바구니 담기
-        <OrderModal isOpen={isOpen} />
-      </AddBasketButtons>
+      <AddBasketButtons onClick={handleClick}>장바구니 담기</AddBasketButtons>
+      <OrderModal isOpen={isOpen} onCancel={handleClickCancel} />
     </BasketStyled>
   );
 };
