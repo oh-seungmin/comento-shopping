@@ -66,6 +66,7 @@ const Basket = () => {
             key={product.id}
             id={product.id}
             thumbnail={product.thumbnail}
+            alt={product.name}
             name={product.name}
             price={product.price}
             onClickRemoveButton={() => onClickRemoveButton(product.id)}
