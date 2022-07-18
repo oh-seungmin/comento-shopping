@@ -44,6 +44,7 @@ const Basket = () => {
   };
   const handleClickCancel = () => {
     setOpen(false);
+    navigate("/");
   };
 
   const TotalPrice = (items) => {
