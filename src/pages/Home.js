@@ -50,6 +50,7 @@ const Home = () => {
           products.map((product) => (
             <ProductCard
               onClick={() => navigate(`product/${product.id}`)}
+              alt={product.name}
               key={product.id}
               name={product.name}
               description={product.description}
